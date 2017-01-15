@@ -5,7 +5,7 @@ import { Router, Route, browserHistory, Redirect } from 'react-router';
 import configureStore from '../store/configureStore';
 
 import Welcome from '../components/Welcome';
-import Signup from '../containers/Signup/SignupContainer'; 
+import Signup from '../containers/SignupContainer'; 
 
 const store = configureStore();
 
@@ -15,9 +15,9 @@ export default class Root extends Component {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Route path="/" component={Welcome} />
-          <Route path="/signup" component={Signup} />
-          <Redirect path="*" to="/" />
+          <Route path='/' component={Welcome} />
+          <Route path='/signup' component={Signup} />
+          <Redirect path='*' to='/' />
         </Router>
       </Provider>
     );
