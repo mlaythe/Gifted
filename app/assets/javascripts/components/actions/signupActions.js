@@ -14,8 +14,8 @@ export function passwordInputAction(input) {
   };
 }
 
-export function emptyLoginFieldAction() {
+export function emptySignupField() {
   return {
-    type: types.EMPTY_LOGIN_FIELD,
+    type: types.EMPTY_SIGNUP_FIELD,
   };
 }
