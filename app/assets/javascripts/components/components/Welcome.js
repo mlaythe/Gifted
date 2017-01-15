@@ -1,12 +1,20 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import Navbar from './Navbar';
 
-class Welcome extends Component {
-  render() {
-    return (
-      <div>Welcome!</div>
-    );
-  }
-}
+const Welcome = () => {
+  const items = [
+    { name: 'Home', link: '/home' },
+    { name: 'About', link: '/about' },
+    { name: 'Signup', link: '/signup' },
+    { name: 'Login', link: '/login' }
+  ];
+
+  return (
+    <div>
+      <Navbar items={items}/>
+    </div>
+  );
+};
 
 Welcome.propTypes = {
   
