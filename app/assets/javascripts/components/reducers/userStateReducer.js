@@ -1,15 +1,15 @@
 import * as types from './../actions/actionTypes.js';
 
 const initialState = {
-  email: '',
+  username: '',
   password: '',
   emptyLoginField: false,
 };
 
 function userStateReducer(state = initialState, action) {
   switch (action.type) {
-    case types.EMAIL_ADDRESS_INPUT:
-      return Object.assign({}, state, { email: action.emailInput });
+    case types.USERNAME_INPUT:
+      return Object.assign({}, state, { username: action.usernameInput });
     case types.PASSWORD_INPUT:
       return Object.assign({}, state, { password: action.passwordInput });
     case (types.EMPTY_LOGIN_FIELD):
