@@ -1,10 +1,26 @@
 import React, { PropTypes } from 'react';
+import FormInput from '../FormInput/FormInput';
 
-const Signup = () => {
+const Signup = ({ signupFunctions }) => {
+  const { updateUsername, updatePassword, submitSignupForm } = signupFunctions;
 
   return (
     <div>
-      Signup component, yay!
+      <form onSubmit={submitSignupForm}>
+        <FormInput
+          inputType='username'
+          inputID='signupUsernameInput'
+          labelText='Username'
+          handleChangeFn={updateUsername}
+        />
+        <FormInput
+          inputType='password'
+          inputID='signupPasswordInput'
+          labelText='Password'
+          handleChangeFn={updatePassword}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
