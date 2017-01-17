@@ -19,7 +19,7 @@ class SignupContainer extends Component {
 
   submitSignupForm = (e) => {
     e.preventDefault();
-    this.props.signupActions.submitSignupAction(this.props.userState.username, this.props.userState.password);
+    this.props.signupActions.submitSignupForm(this.props.userState.username, this.props.userState.password);
   }
 
   render() {
