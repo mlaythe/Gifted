@@ -20,8 +20,14 @@ export function emptySignupField() {
   };
 }
 
-export function submitSignupForm() {
-  return {
-    type: types.SUBMIT_SIGNUP_FORM,
+export function submitSignupForm(username, password) {
+  return function(dispatch) {
+    return $.ajax({
+      method: 'POST',
+      url: '/users',
+      data: { user: { username, password } }
+    })
+    .done((data) => dispatch(userCreateSuccess()))
+    .fail(() => dispatch(userCreateFail()));
   };
 }
